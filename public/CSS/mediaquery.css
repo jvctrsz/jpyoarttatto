@@ -1,0 +1,65 @@
+@media (max-width: 680px){
+    .photos-container{
+     max-height: 627px;
+    }
+ }
+ 
+ @media (min-width: 680px){
+     .description{
+         max-width: 660px;
+     }
+     
+     .photos-container{
+         max-width: 680px;
+         max-height: 680px;
+         padding: 40px 0px;
+     }
+     .photos{
+         justify-content: center;
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 40px;
+     }
+     .photos-tutorialContainer{
+         display: flex;
+     }
+ 
+     .image-tutorial{
+         padding: 10px;
+     }
+ }
+ 
+ @media (min-width: 1008px){
+     .menu > .menuList {
+         display: flex;
+         flex-direction: row;
+     }
+ 
+     .menu > .menuList > .list{
+         margin: 25px;
+         letter-spacing: 2px;
+     }
+ 
+     .menu > .menuList > .list:hover{
+         color: #fff;
+     }
+ 
+ 
+     .photos-container{
+         max-width: 1000px;
+     }
+     .photos{
+         flex-direction: row;
+         flex-wrap: wrap;
+     }
+ }
+ 
+ @media (min-width: 1366px){
+     .photos-container{
+         max-width: 1320px;
+     }
+     .photos{
+         flex-direction: row;
+         flex-wrap: wrap;
+     }
+ }

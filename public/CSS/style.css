@@ -1,0 +1,379 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    
+}
+
+/* HOME PAGE */
+
+body{
+    background-image: url(../images/card-background.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#card-content{
+    display: flex;
+}
+
+#card-box{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px;
+    font-family: "Orbitron", Arial;
+    font-size: 20px;
+    
+}
+
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu > .menuList {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.menu > .menuList > .list {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #ffff;
+    font-family: "Orbitron", Arial;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    background-color: #00000000;
+    border: none;
+    transition:  0.1s;
+}
+
+.menuList:hover > .list{
+    filter: blur(1px);
+    color: #8f8f8f;
+}
+
+.menu > .menuList > .list:hover{
+    filter: none;
+    font-size: 35px;
+    color: #fff;
+    
+}
+
+
+/* ABOUT MENU */
+
+#about-content{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.about-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    padding: 20px;
+    
+}
+
+.about-title{
+    width: 160px;
+    padding: 25px 0px;
+    font-family: "Orbitron", Arial;
+}
+
+.description{
+    width: 100%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.247);
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 0px 20px;
+    border: 0px solid rgb(48, 44, 44);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 0px 15px 10px #0c0c0c;
+    overflow-y: scroll;
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.description > p {
+    width: 95%;
+    padding: 15px 0px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 22px;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Work Sans", sans-serif
+}
+
+.description > p::first-letter {
+    font-size: 1.2em;
+}
+
+.description > p:first-child::first-letter{
+    font-size: 1.3em;
+    padding-left: 5px;
+}
+
+.about-box > .btnHome{
+    margin-top: 30px;
+}
+
+
+/* WORKS */
+
+#works-content{
+    height: 100vh;
+    width: 100vw;
+}
+
+.works-box{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.works-title{
+    width: 190px;
+    padding: 20px 0px;
+    font-family: "Orbitron", Arial;
+    font-size: 20px;
+}
+
+.photos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 340px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 10px #0c0c0c;
+    overflow: hidden;
+    padding: 20px 0px;
+}
+
+.photos-container::-webkit-scrollbar, .photos::-webkit-scrollbar{
+    display: none;
+}
+
+.photos{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    align-items: center;
+    min-width: 300px;
+    gap: 20px;
+}
+
+.image > a > img{
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 1px 1px #00000049;
+}
+
+.image img:hover{
+    box-shadow: 8px 8px 1px 1px #6d6d6d1e;
+}
+
+.image > a:visited{
+    width: 280px;
+}
+
+.works-box> .btnHome{
+    margin-top: 30px;
+}
+/* CONTACTS */
+
+#contacts-content{
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-box{
+    max-width: 690px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+    font-size: 1em;
+    letter-spacing: 0.8px;
+    line-height: 22px;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.contacts-title{
+    align-self: flex-start;
+    width: 340px;
+    font-family: "Orbitron", Arial;
+    font-size: 20px;
+    padding: 25px 0px;
+}
+
+.guide{
+    text-align: justify;
+    
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.contacts-box .firstContact{
+    padding-top: 50px;
+}
+
+.contacts-box .secondContact{
+    padding-bottom: 50px;
+}
+
+.links {
+    padding: 15px;
+    text-decoration: none;
+    width: 300px;
+}
+
+.icons{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 10px;
+   box-shadow: 0px 0px 15px 10px #0c0c0c46;
+   border-radius: 20px;
+}
+
+.icons:hover{
+   font-size: 1.2em;
+   box-shadow: 0px 0px 15px 10px #0c0c0c;
+   text-shadow: 0px 0px 20px #ffffffab;
+   transition: 0.5s;
+}
+.icon-image > img{
+    width: 48px;
+}
+
+.info{
+    padding: 20px;
+}
+
+.title-tutorial h2{
+    width: 200px;
+    padding: 20px 0px;
+    font-family: "Orbitron", Arial;
+}
+
+.title-tutorial h3{
+    padding: 20px 0px;
+}
+
+.photoContainer-tutorial > h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.text-tutorial p{
+    text-align: justify;
+    padding: 10px 0px;
+    font-size: 1em;
+    line-height: 20px;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Work Sans", sans-serif
+}
+
+.image-tutorial{
+    max-width: 320px;
+    padding: 20px 0px;
+}
+
+.img-tuto{
+    max-width: 300px;
+    border-radius: 20px;
+}
+
+.img-tuto > img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px #0202027e;
+}
+
+.img-tuto > img:hover{
+    box-shadow: 0px 0px 10px 10px #ffffff17;
+    transition: 0.5s;
+}
+
+.contacts-box > .btnHome{
+    margin-top: 0px;
+}
+
+.btnHome{
+    width: 260px;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Noto Sans", sans-serif;
+    box-shadow: 0px 0px 10px 5px #42424227;
+}
+
+.btnHome:hover{
+    background-color:rgb(70, 68, 68);
+    transition: 0.5s;
+}
+
+
+
+/* ADMIN PAGE */
+
+#admin-content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: #000;
+}
+
+#admin-page{
+    display: none;
+}
+
