@@ -12,7 +12,6 @@ export default function WorksSection() {
             try {
                 const querySnapshot = await getDocs(collection(db, "imageUrls")); // Substitua "nomeDaColecao" pelo nome da sua coleção
                 const urls = querySnapshot.docs.map(doc => doc.data().url); // Substitua 'url' pelo nome do campo que armazena a URL
-                console.log(urls)
                 setImageUrls(urls);
             } catch (error) {
                 console.error("Erro ao buscar imagens: ", error);

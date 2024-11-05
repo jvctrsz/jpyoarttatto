@@ -62,7 +62,7 @@ export default function AdminImg() {
         <section id="admin-content">
             <div className="login">
                 <p className="informationPhrase">Escreva a senha para ter acesso!</p>
-                <input id="login-password" type="password" style={{ color: 'black' }} />
+                <input id="login-password" type="password" style={{ color: 'black' }} placeholder='Insira sua senha aqui!!' />
                 <button onClick={pageValidation}>Enviar</button>
             </div>
             <div id="admin-page">

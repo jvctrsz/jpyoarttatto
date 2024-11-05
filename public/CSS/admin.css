@@ -1,0 +1,97 @@
+#admin-content{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Work Sans", sans-serif;
+}
+
+.login{
+    width: 320px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.login .informationPhrase{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.login #login-password {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #ffffff62;
+    border-radius: 5px;
+    outline-color: #fff;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0.616);
+    box-shadow: 0px 0px 10px 5px #42424227;
+    color: #fff;
+}
+
+.login #login-password::placeholder{
+    color: #ffffff69;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.login button{
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.616);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Noto Sans", sans-serif;
+    box-shadow: 0px 0px 10px 5px #42424227;
+}
+
+.login button:hover{
+    background-color:rgb(70, 68, 68);
+    transition: 0.5s;
+}
+
+
+.admin-container{
+   margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input[type="file" i] {
+    font-family: "Work Sans", sans-serif;
+    margin-top: 20px;
+}
+
+form button{ 
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.616);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Noto Sans", sans-serif;
+    box-shadow: 0px 0px 10px 5px #42424227;
+}
+
+.form button:hover{
+    background-color:rgb(70, 68, 68);
+    transition: 0.5s;
+}
