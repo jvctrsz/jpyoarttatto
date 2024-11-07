@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { storage } from '../firebase'; // Assegure-se de que está importando o storage corretamente
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db } from '../firebase'; // Importe seu Firestore
-import { addDoc, collection, getDocs, query, where} from 'firebase/firestore'; // Importe os métodos necessários do Firestore
+import { getFirestore,addDoc, collection, getDocs, query, where} from 'firebase/firestore'; // Importe os métodos necessários do Firestore
+
+import WorksImage from './WorksImage';
 
 export default function AdminImg() {
     const pageValidation = () => {
@@ -16,9 +18,11 @@ export default function AdminImg() {
         }
     };
 
+
+    //REALIZA O UPLOAD NO BANCO
     const [images, setImages] = useState([]);
     const [progress, setProgress] = useState(0);
-    const [imageURLs, setImageURLs] = useState([]); // Estado para armazenar URLs das imagens
+    const [imageURLs, setImageURLs] = useState([]); 
 
     const imageUpload = async (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário
@@ -58,6 +62,25 @@ export default function AdminImg() {
         }
     };
 
+
+    //BUSCA TODAS AS IMAGENS NO BANCO
+    const [allImagesUrls, setAllImagesUrls] = useState([]);
+    const dbFire = getFirestore();
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(dbFire, "imageUrls")); // Substitua "nomeDaColecao" pelo nome da sua coleção
+                const urls = querySnapshot.docs.map(doc => doc.data().url); // Substitua 'url' pelo nome do campo que armazena a URL
+                setAllImagesUrls(urls);
+            } catch (error) {
+                console.error("Erro ao buscar imagens: ", error);
+            }
+        };
+
+        fetchImages();
+    }, [db]);
+
     return (
         <section id="admin-content">
             <div className="login">
@@ -77,18 +100,13 @@ export default function AdminImg() {
                         <button onClick={imageUpload}>Enviar</button>
                         {progress > 0 && <p>Upload progress: {progress}%</p>}
                     </form>
-                    {imageURLs.length > 0 && (
-                        <div>
-                            <h3>Imagens carregadas:</h3>
-                            <ul>
-                                {imageURLs.map((url, index) => (
-                                    <li key={index}>
-                                        <img src={url} alt="" style={{ width: 300 }} />
-                                    </li>
-                                ))}
-                            </ul>
+                    <div className="photos-container" style={{marginTop: '40px'}}>
+                        <div className="photos">
+                            {allImagesUrls.map((url, index) => (
+                                <WorksImage key={index} idImage={url} /> // Altere conforme a necessidade
+                            ))}
                         </div>
-                    )}
+                    </div>
                 </div>
             </div>
         </section>

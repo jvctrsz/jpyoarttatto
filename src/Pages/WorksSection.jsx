@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore"; // Certifique-se de que esses imports estão corretos
+import { getFirestore, collection, getDocs } from "firebase/firestore"; 
 import WorksImage from "./WorksImage";
 import BtnInicio from "./BtnInicio";
+
 
 export default function WorksSection() {
     const [imageUrls, setImageUrls] = useState([]);
