@@ -56,6 +56,7 @@ export default function AdminImg() {
         try {
             await Promise.all(promises);
             setImages([]); // Limpa a lista de imagens
+            setProgress(100);
         } catch (error) {
             console.error(error);
         }
