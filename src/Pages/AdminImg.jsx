@@ -26,36 +26,37 @@ export default function AdminImg() {
     const [progress, setProgress] = useState(0);
 
     const imageUpload = async (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do formulário
+        e.preventDefault(); 
         const promises = [];
-        const urls = []; // Array para armazenar URLs
-    
-        // Converte o FileList em um array
+        const urls = [];
+
         const imagesArray = Array.from(images);
     
         for (let i = 0; i < imagesArray.length; i++) {
             const image = imagesArray[i];
-            const imageRef = ref(storage, `images/${image.name}`); // Criar referência para cada imagem
+            const imageRef = ref(storage, `images/${image.name}`);
             
-            // Enviar imagem para o storage
+            // UPLOAD DAS IMAGENS PARA O FIREBASE
             promises.push(uploadBytes(imageRef, image).then(async () => {
-                const url = await getDownloadURL(imageRef); // Obter a URL após o upload
-                urls.push(url); // Armazenar a URL
+                //BAIXA A URL
+                const url = await getDownloadURL(imageRef); 
+                //ENVIA A URL
+                urls.push(url);
     
-                // Verificar se a URL já existe no Firestore
+                // VERIFICA SE JA EXISTE UMA URL COM O MESMO NOME
                 const q = query(collection(db, 'imageUrls'), where('url', '==', url));
                 const querySnapshot = await getDocs(q);
                 
-                // Adicionar URL ao Firestore apenas se não existir
+                // ENVIA A URL, SE NÃO EXISTIR NENHUMA COM O MESMO NOME
                 if (querySnapshot.empty) {
-                    await addDoc(collection(db, 'imageUrls'), { url }); // Armazena a URL na coleção 'imageUrls'
+                    await addDoc(collection(db, 'imageUrls'), { url }); 
                 }
             }));
         }
     
         try {
             await Promise.all(promises);
-            setImages([]); // Limpa a lista de imagens
+            setImages([]); 
             setProgress(100);
         } catch (error) {
             console.error(error);
@@ -88,10 +89,10 @@ export default function AdminImg() {
     //DELETAR IMAGENS
     const deleteImage = async (imageId, imageUrl) => {
         try {
-          // 1. Deletar o documento do Firestore
+          // DELETA O DOC DO FIRESTORE
           await deleteDoc(doc(dbFire, 'imageUrls', imageId));
       
-          // 2. Deletar o arquivo do Firebase Storage
+          // DELETA O ARQUIVO DO FIREBASE
           const storageRef = ref(storage, imageUrl);
           await deleteObject(storageRef);
       
