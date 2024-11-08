@@ -26,6 +26,7 @@
     border-radius: 5px;
     outline-color: #fff;
     margin-top: 25px;
+    padding: 0px 7px;
     background-color: rgba(0, 0, 0, 0.616);
     box-shadow: 0px 0px 10px 5px #42424227;
     color: #fff;
@@ -35,7 +36,6 @@
     color: #ffffff69;
     letter-spacing: 1.2px;
     font-weight: bold;
-    padding-left: 5px;
 }
 
 .login button{

@@ -1,12 +1,14 @@
 import React, {useEffect, useState } from 'react';
-import { storage } from '../firebase'; // Assegure-se de que está importando o storage corretamente
+import { storage } from '../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db } from '../firebase'; // Importe seu Firestore
-import { getFirestore,addDoc, collection, getDocs, query, where} from 'firebase/firestore'; // Importe os métodos necessários do Firestore
+import { db } from '../firebase'; 
+import { getFirestore,addDoc, collection, getDocs, query, where} from 'firebase/firestore';
 
 import WorksImage from './WorksImage';
 
 export default function AdminImg() {
+    
+    //Validação do login
     const pageValidation = () => {
         let password = document.querySelector('#login-password').value;
 
@@ -21,8 +23,6 @@ export default function AdminImg() {
 
     //REALIZA O UPLOAD NO BANCO
     const [images, setImages] = useState([]);
-    const [progress, setProgress] = useState(0);
-    const [imageURLs, setImageURLs] = useState([]); 
 
     const imageUpload = async (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário
@@ -54,8 +54,6 @@ export default function AdminImg() {
     
         try {
             await Promise.all(promises);
-            setImageURLs(urls); // Atualizar estado com as URLs
-            setProgress(100);
             setImages([]); // Limpa a lista de imagens
         } catch (error) {
             console.error(error);
@@ -85,7 +83,7 @@ export default function AdminImg() {
         <section id="admin-content">
             <div className="login">
                 <p className="informationPhrase">Escreva a senha para ter acesso!</p>
-                <input id="login-password" type="password" style={{ color: 'black' }} placeholder='Insira sua senha aqui!!' />
+                <input id="login-password" type="password" placeholder='Insira sua senha aqui!!' />
                 <button onClick={pageValidation}>Enviar</button>
             </div>
             <div id="admin-page">
@@ -98,7 +96,6 @@ export default function AdminImg() {
                             onChange={(e) => setImages(e.target.files)}
                         />
                         <button onClick={imageUpload}>Enviar</button>
-                        {progress > 0 && <p>Upload progress: {progress}%</p>}
                     </form>
                     <div className="photos-container" style={{marginTop: '40px'}}>
                         <div className="photos">
