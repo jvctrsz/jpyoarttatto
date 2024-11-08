@@ -1,8 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import { storage } from '../firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL, deleteObject  } from 'firebase/storage';
 import { db } from '../firebase'; 
-import { getFirestore,addDoc, collection, getDocs, query, where} from 'firebase/firestore';
+import { getFirestore,addDoc, collection, getDocs, query, where, doc, deleteDoc } from 'firebase/firestore';
 
 import WorksImage from './WorksImage';
 
@@ -70,8 +70,11 @@ export default function AdminImg() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const querySnapshot = await getDocs(collection(dbFire, "imageUrls")); // Substitua "nomeDaColecao" pelo nome da sua coleção
-                const urls = querySnapshot.docs.map(doc => doc.data().url); // Substitua 'url' pelo nome do campo que armazena a URL
+                const querySnapshot = await getDocs(collection(dbFire, "imageUrls")); 
+                const urls = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    url: doc.data().url
+                  })); 
                 setAllImagesUrls(urls);
             } catch (error) {
                 console.error("Erro ao buscar imagens: ", error);
@@ -80,6 +83,29 @@ export default function AdminImg() {
 
         fetchImages();
     }, [db]);
+
+
+    //DELETAR IMAGENS
+    const deleteImage = async (imageId, imageUrl) => {
+        try {
+          // 1. Deletar o documento do Firestore
+          await deleteDoc(doc(dbFire, 'imageUrls', imageId));
+      
+          // 2. Deletar o arquivo do Firebase Storage
+          const storageRef = ref(storage, imageUrl);
+          await deleteObject(storageRef);
+      
+          console.log(`Imagem ${imageId} deletada com sucesso.`);
+        } catch (error) {
+          console.error("Erro ao deletar a imagem: ", error);
+        }
+      };
+
+
+    const handleDeleteClick = async (imageId, imageUrl) => {
+        await deleteImage(imageId, imageUrl);
+        setAllImagesUrls(prevImages => prevImages.filter(image => image.id !== imageId));
+      };
 
     return (
         <section id="admin-content">
@@ -102,8 +128,12 @@ export default function AdminImg() {
                     </form>
                     <div className="photos-container" style={{marginTop: '40px'}}>
                         <div className="photos">
-                            {allImagesUrls.map((url, index) => (
-                                <WorksImage key={index} idImage={url} /> // Altere conforme a necessidade
+                            {allImagesUrls.map(image => (
+                                <WorksImage 
+                                key={image.id} 
+                                idImage={image.url} 
+                                onClick={() => handleDeleteClick(image.id, image.url)}
+                                /> 
                             ))}
                         </div>
                     </div>

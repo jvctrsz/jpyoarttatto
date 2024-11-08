@@ -95,3 +95,12 @@ form button{
     background-color:rgb(70, 68, 68);
     transition: 0.5s;
 }
+
+.image:hover {
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.image > img {
+    width: 280px;
+}

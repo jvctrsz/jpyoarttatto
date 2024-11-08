@@ -1,9 +1,7 @@
 export default function WorksImage(props){
     return(
-        <div className="image">
-            <a href={props.idImage} target="_blank" rel="imagem do portfolio">
+        <div className="image" onClick={props.onClick} >
             <img src={props.idImage} alt="" />
-            </a>
             </div>
     )
 }
