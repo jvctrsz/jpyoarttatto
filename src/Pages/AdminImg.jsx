@@ -4,7 +4,7 @@ import { ref, uploadBytes, getDownloadURL, deleteObject  } from 'firebase/storag
 import { db } from '../firebase'; 
 import { getFirestore,addDoc, collection, getDocs, query, where, doc, deleteDoc } from 'firebase/firestore';
 
-import WorksImage from './WorksImage';
+import AdminImgComp from './AdminImgComp';
 
 export default function AdminImg() {
     
@@ -129,7 +129,7 @@ export default function AdminImg() {
                     <div className="photos-container" style={{marginTop: '40px'}}>
                         <div className="photos">
                             {allImagesUrls.map(image => (
-                                <WorksImage 
+                                <AdminImgComp 
                                 key={image.id} 
                                 idImage={image.url} 
                                 onClick={() => handleDeleteClick(image.id, image.url)}
