@@ -23,6 +23,7 @@ export default function AdminImg() {
 
     //REALIZA O UPLOAD NO BANCO
     const [images, setImages] = useState([]);
+    const [progress, setProgress] = useState(0);
 
     const imageUpload = async (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário
@@ -96,6 +97,8 @@ export default function AdminImg() {
                             onChange={(e) => setImages(e.target.files)}
                         />
                         <button onClick={imageUpload}>Enviar</button>
+                        {progress > 0 && <p>Nivel de progresso: {progress}%, favor reiniciar a pagina.</p>}
+
                     </form>
                     <div className="photos-container" style={{marginTop: '40px'}}>
                         <div className="photos">
