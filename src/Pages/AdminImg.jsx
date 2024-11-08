@@ -98,8 +98,7 @@ export default function AdminImg() {
                             onChange={(e) => setImages(e.target.files)}
                         />
                         <button onClick={imageUpload}>Enviar</button>
-                        {progress > 0 && <p>Nivel de progresso: {progress}%, favor reiniciar a pagina.</p>}
-
+                        {progress > 0 && <p>Upload: {progress}%, favor reiniciar a página.</p>}
                     </form>
                     <div className="photos-container" style={{marginTop: '40px'}}>
                         <div className="photos">
