@@ -25,7 +25,7 @@ export default function WorksSection() {
     return (
         <div className="works-box">
             <div className="works-title">
-                <h2 className="cssanimation typing">Trabalhos!!</h2>
+                <h2 className="cssanimation typing">Trabalhos</h2>
             </div>
             <div className="photos-container cssanimation fadeIn">
                 <div className="photos">

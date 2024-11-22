@@ -8,7 +8,7 @@ export default function ContactsSection() {
         <section id="contacts-content">
             <div className="contacts-box cssanimation fadeIn">
                 <div className="contacts-title">
-                    <h2 className="cssanimation typing">Entre em contato!!</h2>
+                    <h2 className="cssanimation typing">Entre em contato</h2>
                 </div>
                 <div className="guide cssanimation fadeIn">
                     <p>Para realizar seu orçamento entre em contato através das opções abaixo e caso possua alguma

@@ -1,0 +1,81 @@
+.loginRegister{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+ .informationPhrase{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+form{
+    gap: 30px;
+}
+
+form label {
+    text-decoration: none;
+    padding: 5px 0px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+ .inputCss {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #ffffff62;
+    border-radius: 5px;
+    outline-color: #fff;
+    padding: 0px 7px;
+    background-color: rgba(0, 0, 0, 0.616);
+    box-shadow: 0px 0px 10px 5px #42424227;
+    color: #fff;
+}
+
+.inputCss::placeholder{
+    color: #ffffff69;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+
+ .submitBtn{
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.616);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Noto Sans", sans-serif;
+    box-shadow: 0px 0px 10px 5px #42424227;
+}
+
+.login .submitBtn:hover{
+    background-color:rgb(70, 68, 68);
+    transition: 0.5s;
+}

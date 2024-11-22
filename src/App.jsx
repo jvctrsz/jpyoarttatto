@@ -9,6 +9,9 @@ import '../public/CSS/style.css'
 import '../public/CSS/mediaquery.css'
 import '../public/CSS/animations.css'
 import '../public/CSS/admin.css'
+import Login from "./Pages/LoginPages/Login/Login";
+import Register from "./Pages/LoginPages/Register/register";
+import AdminDb from "./Pages/AdminDb";
 
 function App() {
 
@@ -21,6 +24,9 @@ function App() {
           <Route path="/WorksSection" element={<WorksSection />} />
           <Route path="/ContactsSection" element={<ContactsSection />} />
           <Route path="/AdminImg" element={<AdminImg/>}/>
+          <Route path="/AdminDb" element={<AdminDb/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Register" element={<Register/>}/>
         </Routes>
       </Router>
       

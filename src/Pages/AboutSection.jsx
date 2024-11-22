@@ -6,7 +6,7 @@ export default function AboutSection() {
         <section id="about-content">
             <div className="about-box">
                 <div className="about-title">
-                    <h2 className="cssanimation typing">Sobre Mim!</h2>
+                    <h2 className="cssanimation typing">Sobre Mim</h2>
                 </div>
                 <div className="description cssanimation fadeIn">
                     <p >Olá! Eu sou a Julia Pedrozo, atualmente tenho 21 anos e estou no ramo da tatuagem há 2 anos.
