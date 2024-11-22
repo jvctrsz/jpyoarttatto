@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../../firebase";
-import AdminDb from "../../AdminDb";
-
 
 export default function Login() {
     const navigate = useNavigate()
