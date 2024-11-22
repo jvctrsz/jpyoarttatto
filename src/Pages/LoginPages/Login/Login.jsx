@@ -36,6 +36,7 @@ export default function Login() {
 
     return (
         <div className="loginRegister">
+            <h1>Faça o seu login</h1>
             <div className="inputsContainer">
                 <form>
                     <div>

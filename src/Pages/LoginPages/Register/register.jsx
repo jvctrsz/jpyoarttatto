@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../../firebase";
 
 export default function Register() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [
@@ -25,11 +26,12 @@ export default function Register() {
             </div>
         );
     }
-    if (loading) {
-        return <p>Loading...</p>;
+    if (user) {
+        navigate('/Login')
     }
     return (
         <div className="loginRegister">
+            <h1>Faça o seu registro</h1>
             <div className="inputsContainer">
                 <form>
                     <div>
