@@ -1,7 +1,7 @@
 import React from "react"
 import ContactsIcon from "./ContactsIcon"
 import ContactsPhoto from "./ContactsPhoto"
-import BtnInicio from "./BtnInicio"
+import BtnInicio from "../BtnInicio"
 
 export default function ContactsSection() {
     return (

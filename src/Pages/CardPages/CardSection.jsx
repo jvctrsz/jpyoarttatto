@@ -1,5 +1,5 @@
 import React from "react"
-import Menu from '../Pages/Menu'
+import Menu from '../Menu'
 
 function CardSection() {
     

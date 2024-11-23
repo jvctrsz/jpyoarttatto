@@ -5,6 +5,9 @@
  }
  
  @media (min-width: 680px){
+    #about-content{
+        justify-content: center;
+    }
      .description{
          max-width: 660px;
      }

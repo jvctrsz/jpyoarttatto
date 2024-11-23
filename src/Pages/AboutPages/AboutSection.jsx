@@ -1,5 +1,5 @@
 import React from "react"
-import BtnInicio from "./BtnInicio"
+import BtnInicio from "../BtnInicio"
 
 export default function AboutSection() {
     return (
