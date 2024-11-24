@@ -12,6 +12,7 @@ import '../public/CSS/style.css'
 import '../public/CSS/mediaquery.css'
 import '../public/CSS/animations.css'
 import '../public/CSS/admin.css'
+import '../src/Pages/LoginPages/styles.css'
 
 function App() {
 

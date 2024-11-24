@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore"; 
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import WorksImage from "./WorksImage";
 import BtnInicio from "../BtnInicio";
 
@@ -14,15 +14,14 @@ export default function WorksSection() {
         const fetchImages = async () => {
             try {
                 //BUSCA OS DOCUMENTOS DO FIRESTORE
-                const querySnapshot = await getDocs(collection(db, "imageUrls")); 
-                //ARMAZENA AS URLS
-                const urls = querySnapshot.docs.map(doc => doc.data().url); 
+                const querySnapshot = await getDocs(collection(db, "imageUrls"));
+                //BUSCA AS URLS
+                const urls = querySnapshot.docs.map(doc => doc.data().url);
                 setImageUrls(urls);
             } catch (error) {
                 console.error("Erro ao buscar imagens: ", error);
             }
         };
-
         fetchImages();
     }, [db]);
 
@@ -34,11 +33,11 @@ export default function WorksSection() {
             <div className="photos-container cssanimation fadeIn">
                 <div className="photos">
                     {imageUrls.map((url, index) => (
-                        <WorksImage key={index} idImage={url} /> 
-                    ))}     
+                        <WorksImage key={index} idImage={url} />
+                    ))}
                 </div>
             </div>
-            <BtnInicio/>
+            <BtnInicio />
         </div>
     );
 }

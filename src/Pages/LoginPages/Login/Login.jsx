@@ -58,7 +58,7 @@ export default function Login() {
                         />
                     </div>
                 </form>
-                <Link to='/Register'>Clique aqui para se registrar.</Link>
+                <Link className="loginChange" to='/Register'>Clique aqui para se registrar.</Link>
                 <button className="submitBtn" onClick={handleLogin}>Enviar</button>
             </div>
         </div>

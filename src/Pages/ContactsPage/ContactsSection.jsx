@@ -11,22 +11,19 @@ export default function ContactsSection() {
                     <h2 className="cssanimation typing">Entre em contato</h2>
                 </div>
                 <div className="guide cssanimation fadeIn">
-                    <p>Para realizar seu orçamento entre em contato através das opções abaixo e caso possua alguma
-                        dúvida
-                        na hora de como enviar seu orçamento, estarei disponibilizando um guia no final da pagina para
-                        auxiliar. Obrigado!
+                    <p>Para realizar seu orçamento entre em contato através das opções abaixo e caso possua alguma dúvida em como enviar seu orçamento, estarei disponibilizando um guia no final da página para auxiliar. Obrigado!
                     </p>
                 </div>
-                <ContactsIcon 
-                Classe='firstContact' 
-                NameApp={'whatsapp'} 
-                Info={'(66) 996729965'} 
-                LinkApp={"https://wa.me/5566996729965?text=Olá!%20gostaria%20de%20realizar%20um%20orçamento!"} />
-                <ContactsIcon 
-                Classe='secondContact' 
-                NameApp={'instagram'} 
-                Info={'@Jpyoartattoo'} 
-                LinkApp={"https://www.instagram.com/jpyoarttattoo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="} />
+                <ContactsIcon
+                    Classe='firstContact'
+                    NameApp={'whatsapp'}
+                    Info={'(66) 996729965'}
+                    LinkApp={"https://wa.me/5566996729965?text=Olá!%20gostaria%20de%20realizar%20um%20orçamento!"} />
+                <ContactsIcon
+                    Classe='secondContact'
+                    NameApp={'instagram'}
+                    Info={'@Jpyoartattoo'}
+                    LinkApp={"https://www.instagram.com/jpyoarttattoo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="} />
                 <div className="tutorial">
                     <div className="title-tutorial">
                         <h2>Orçamentos!!!</h2>

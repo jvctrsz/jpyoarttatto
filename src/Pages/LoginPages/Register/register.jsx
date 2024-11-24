@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../../firebase";
-
+import '../styles.css'
 export default function Register() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('');
@@ -53,7 +53,7 @@ export default function Register() {
                             />
                     </div>
                 </form>
-                <Link to='/Login'>Clique aqui para se logar.</Link>
+                <Link className="loginChange" to='/Login'>Clique aqui para se logar.</Link>
                 <button className="submitBtn" onClick={handleSignIn}>Enviar</button>
             </div>
         </div>

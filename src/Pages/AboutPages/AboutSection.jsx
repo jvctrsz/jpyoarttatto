@@ -25,10 +25,7 @@ export default function AboutSection() {
                         buscando evoluir em todos os aspectos possíveis para se tornar um profissional melhor.</p>
                 </div>
                 <BtnInicio />
-
             </div>
         </section>
     )
 }
-
-//onclick={cardMenu()}
