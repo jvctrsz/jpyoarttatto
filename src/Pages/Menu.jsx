@@ -14,7 +14,3 @@ function Menu(){
 }
 
 export default Menu
-
-// onclick={aboutMenu()}
-// onclick={worksMenu()}
-// onclick={contactMenu()}

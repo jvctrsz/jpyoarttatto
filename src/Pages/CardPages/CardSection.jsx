@@ -8,7 +8,7 @@ function CardSection() {
             <div id="card-box">
                 <div className="card-title cssanimation fadeInTop">
                     <h1>Julia Pedrozo</h1>
-                    <h2>Tatto</h2>
+                    <h2>Tattoo</h2>
                 </div>
                 <Menu/>
             </div>
