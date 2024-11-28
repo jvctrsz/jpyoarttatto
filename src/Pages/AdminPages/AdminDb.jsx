@@ -60,7 +60,7 @@ export default function AdminDb() {
             try {
                 //BUSCA OS DOCUMENTOS DO FIRESTORE
                 const querySnapshot = await getDocs(collection(dbFire, "imageUrls"));
-                //ARMAZENA AS URLS E ID
+                //BUSCA AS URLS E ID
                 const urls = querySnapshot.docs.map(doc => ({
                     id: doc.id,
                     url: doc.data().url
